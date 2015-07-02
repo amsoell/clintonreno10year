@@ -1082,7 +1082,7 @@ ul.latest h1, ul.sidebar h1 {
 }
 
 ul.latest aside {
-  width: 251px;         /* ! */
+  width: 247px;         /* ! */
   height: 225px;
   overflow: hidden;
   display: inline-block;
@@ -1578,7 +1578,7 @@ div.sortbox .item .ui-selectmenu-button {
   }
 
   ul.latest aside {
-    width: 214px;
+    width: 210px;
   }
 
   ul.latest aside h1 {
@@ -1600,7 +1600,7 @@ div.sortbox .item .ui-selectmenu-button {
   }
 
   ul.latest aside {
-    width: 177px;
+    width: 173px;
   }
 
   ul.latest aside h1 {
@@ -1667,7 +1667,7 @@ div.sortbox .item .ui-selectmenu-button {
   }
 
   ul.latest aside {
-    width: 161px;
+    width: 157px;
   }
 
   ul.latest aside h1 {
@@ -1698,7 +1698,7 @@ div.sortbox .item .ui-selectmenu-button {
   }
 
   ul.latest aside {
-    width: 280px;
+    width: 278px;
   }
 
   ul.latest aside:nth-of-type(even) {
@@ -1728,7 +1728,7 @@ div.sortbox .item .ui-selectmenu-button {
   }
 
   ul.latest aside {
-    width: 206px;
+    width: 204px;
     height: 172px;
   }
 
