@@ -64,7 +64,36 @@ asort($subjects);
       </div>
       <div class="col1wrap">
         <section id="thumbs" class="col1">
-<? foreach ($prints as $print) : if (! is_null($print)) : $print['colors_print'] = preg_split('/[\["?,"?\]]+/', $print['colors_print'], -1, PREG_SPLIT_NO_EMPTY); $print['subject'] = preg_split('/[\["?,"?\]]+/', $print['subject'], -1, PREG_SPLIT_NO_EMPTY); ?><div class="thumbnail year<?php echo date('Y',strtotime($print['date'])); ?> <?php if (((time() - strtotime($print['date']))/60/60/24)<14) echo "new"; ?>  <?php echo $print['type_print']; ?> <?php if ($print['quantity']>0):?>available<?php else: ?>unavailable<?php endif; ?> <?php if (is_array($print['colors_print'])) foreach ($print['colors_print'] as $color) echo 'color'.strtolower(str_replace(' ', '', $color)).' '; foreach ($print['subject'] as $subject) echo 'subject'.strtolower(preg_replace('/[^A-Za-z0-9]/', '', $subject)).' '; ?>"><a href="<?php echo $print['permalink']; ?>"><?php echo wp_get_attachment_image($print['thumbnail']); ?><aside><?php echo $print['post_title']; ?></aside></a><?php if (((time() - strtotime($print['date']))/60/60/24)<14) echo "<img src='/wp-content/themes/clintonreno10year/images/new.png' class='ribbon' />"; ?></div><?php endif; endforeach; ?>
+<?
+  foreach ($prints as $print) {
+    if (! is_null($print)) {
+      $print['colors_print'] = preg_split('/[\["?,"?\]]+/', $print['colors_print'], -1, PREG_SPLIT_NO_EMPTY);
+      $print['subject'] = preg_split('/[\["?,"?\]]+/', $print['subject'], -1, PREG_SPLIT_NO_EMPTY);
+?>
+<div class="thumbnail year<?php echo date('Y',strtotime($print['date'])); ?>
+<?php
+      if (((time() - strtotime($print['date']))/60/60/24)<14) {
+        echo "new";
+      }
+      echo $print['type_print'];
+      if ($print['quantity']>0) {
+        print "available";
+      } else {
+        print "unavailable";
+      }
+      if (is_array($print['colors_print'])) {
+        foreach ($print['colors_print'] as $color) {
+          echo 'color'.strtolower(str_replace(' ', '', $color)).' ';
+        }
+      }
+      foreach ($print['subject'] as $subject) {
+        echo 'subject'.strtolower(preg_replace('/[^A-Za-z0-9]/', '', $subject)).' ';
+      }
+?>"><a href="<?php echo $print['permalink']; ?>"><?php echo wp_get_attachment_image($print['thumbnail']); ?><aside><?php echo $print['post_title']; ?></aside></a><?php if (((time() - strtotime($print['date']))/60/60/24)<14) echo "<img src='/wp-content/themes/clintonreno10year/images/new.png' class='ribbon' />"; ?></div>
+<?php
+    }
+  }
+?>
         </section>
       </div>
     </div>
